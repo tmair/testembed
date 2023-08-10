@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CSS Dark Mode</title>
+    <script src="./iframe-resizer.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="container">
+      Dieses Element verändert sich, je nachdem wie im Betriebssystem der
+      Dark-Mode eingestellt ist. <br /><br />
+      <div class="current">
+        <h3 class="light" onclick="toggleHeight()">Light</h3>
+        <h3 class="dark" onclick="toggleHeight()">Dark</h3>
+      </div>
+    </div>
+    <script>
+      var toggled = false;
+      var container = document.getElementById("container");
+
+      function toggleHeight() {
+        toggled = !toggled;
+        if (toggled) {
+          console.log("height +50px");
+          container.classList.add('toggled')
+        } else {
+          console.log("height reset");
+          container.classList.remove('toggled');
+        }
+      }
+    </script>
+  </body>
+</html>
